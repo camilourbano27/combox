@@ -35,13 +35,5 @@ $sql="
  }
  echo "<script>('User hasn't been created successfully :::')</script>";
  HEADER('refresh:0;url=signin.html');
- 
-/*
-echo "firstname is: ". $f_name;
-echo "<br>lastname is:". $l_name;
-echo "<br>Mobile phone is:". $m_phone;
-echo "<br>E-mail is:". $e_mail;
-echo "Password is:". $p_assword;
-*/
-0
+
 ?>
