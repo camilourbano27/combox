@@ -5,17 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combox / signup</title>
     <link rel="icon"type ="image/png" href="icons/login.png">
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .formulario {
+            text-align: center;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-<body>
+<body bgcolor="#FSDD93">
+<form name = "register-form" action = "signup.php" method="post">
+    <div class="formulario">
+        
    <h3> register new Combox user</h3><br>
    <label>firstname:</label><br>
-   <input type= "text"><br>
+   <input type= "text" name="fname" required><br>
    <label>lastname:</label><br>
-    <input type= "text"><br>
-   <label>Email:</label><br>
-   <input type= "email"><br>
+   <input type= "text"name="lname" required><br>
+   <label>Mobile phone:</label><br>
+   <input type= "text" name="fphone" required><br>
+   <label>E_mail:</label><br>
+   <input type= "email" name= "email" required><br>
    <label>password:</label><br>
-      <input type= "passwor"><br><br>
+      <input type= "password"name= "pswd" required><br><br>
       <button>register ></button>
+
+       </div>
+</form>
 </body>
 </html>
