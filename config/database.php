@@ -1,10 +1,5 @@
 <?php
-//local connection
-$local_host = "localhost";
-$local_port = "5432";
-$local_user = "postgres";
-$local_dbname = "combox";
-$local_password = "unicesmag";
+
 //cloud connection
 
 //supabase connection connection
@@ -14,16 +9,9 @@ $supa_user = "postgres.bbllqswkabxbdxlndjrh";
 $supa_dbname = "postgres";
 $supa_password = "unicesmag@@";
 
-//cloud connection
-$local_conn = pg_connect("
- host=$local_host
- port=$local_port
- dbname=$local_dbname
- user=$local_user
- password=$local_password
-");
 
-$supa_conn = pg_connect("
+
+$conn = pg_connect("
  host=$supa_host
  port=$supa_port
  dbname=$supa_dbname
@@ -31,13 +19,9 @@ $supa_conn = pg_connect("
  password=$supa_password
 ");
 
- if (!$local_conn){
-    die("Error local connection !!!");
- } else{
-    echo "<br>local Connection successs!!!";
- }
+
  
- if (!$supa_conn){
+ if (!$conn){
     die("Error supa connection !!!");
  } else{
     echo "<br>supa Connection successs!!!";

@@ -1,5 +1,7 @@
 <?php
-include 'database.php';
+include __DIR__ . '/../config/database.php';
+
+
 
 $id = $_GET['id'];   // el número que llegó en la URL
 
@@ -32,10 +34,13 @@ $user = pg_fetch_assoc($result);   // una sola fila: el usuario a editar
         <label>Celular</label><br>
         <input type="text" name="mobile_phone" value="<?php echo $user['mobile_phone']; ?>" required><br><br>
 
-        <?php if ($user['photo_url'] != "") { ?>
-            <p>Foto actual:</p>
-            <img src="<?php echo $user['photo_url']; ?>" width="120"><br><br>
-        <?php } ?>
+        <?php if (!empty($user['photo_url'])): ?>
+        <p><strong>Foto actual:</strong></p>
+        <img src="<?php echo $user['photo_url']; ?>" width="100" style="border-radius:50%;"><br><br>
+       <?php else: ?>
+        <p><em>Sin foto asignada — se mostrará la imagen por defecto en la lista.</em></p><br>
+       <?php endif; ?>
+
 
         <label>Foto (JPG o PNG)</label><br>
         <input type="file" name="photo" accept=".jpg,.jpeg,.png"><br><br>
